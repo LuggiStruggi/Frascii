@@ -12,3 +12,5 @@ Install using `pip install frascii`
 `frascii fibonacci <n>`: Displays the fibonacci numbers up to the n-th fibonacci number as squares.
 
 `frascii mandelbrot <x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the mandelbrot set.
+
+![Alt text](readme_images/mandelbrot.png)
