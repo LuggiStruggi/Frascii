@@ -13,4 +13,6 @@ Install using `pip install frascii`
 
 `frascii mandelbrot <x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the mandelbrot set.
 
+more to come ...
+
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
