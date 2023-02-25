@@ -20,7 +20,7 @@ more to come ...
 ## Screenshot of Terminal
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
 
-## ASCII Mandelbrot
+## Smaller ASCII Mandelbrot
 ```
                                                        
                                        ▓░              
@@ -47,7 +47,7 @@ more to come ...
                                       ░░▒░▒█           
                                        ▓░              
 ```
-## ASCII Hilbert Curve
+## ASCII Hilbert Curve, n = 3
 ```
 ┌─┐ ┌─┐ ┌─┐ ┌─┐
 │ └─┘ │ │ └─┘ │
