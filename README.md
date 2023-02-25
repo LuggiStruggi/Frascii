@@ -17,7 +17,7 @@ more to come ...
 
 # Examples
 
-## Screenshot of Terminal
+## Screenshot of Terminal (zoomed out)
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
 
 ## Smaller ASCII Mandelbrot
