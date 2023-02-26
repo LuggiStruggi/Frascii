@@ -2,26 +2,27 @@ import frascii
 import argparse
 
 def cmd_main():
-	parser = argparse.ArgumentParser(prog="frascii", description="ASCII visualization of fractals for the terminal.")
+	fc = argparse.ArgumentDefaultsHelpFormatter
+	parser = argparse.ArgumentParser(prog="frascii", description="ASCII visualization of fractals for the terminal.", formatter_class=fc)
 	subparsers = parser.add_subparsers(dest="subcommand")
 
 	# Sierpinski carpet sub-command
-	sierpinski_parser = subparsers.add_parser("sierpinski_carpet", description="Wikipedia: https://en.wikipedia.org/wiki/Sierpinski_carpet")
+	sierpinski_parser = subparsers.add_parser("sierpinski_carpet", description="Wikipedia: https://en.wikipedia.org/wiki/Sierpinski_carpet", formatter_class=fc)
 	sierpinski_parser.add_argument("n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
 	sierpinski_parser.set_defaults(func=frascii.sierpinski_carpet)
 
 	# Hilbert curve sub-command
-	hilbert_parser = subparsers.add_parser("hilbert_curve", description="Wikipedia: https://en.wikipedia.org/wiki/Hilbert_curve")
+	hilbert_parser = subparsers.add_parser("hilbert_curve", description="Wikipedia: https://en.wikipedia.org/wiki/Hilbert_curve", formatter_class=fc)
 	hilbert_parser.add_argument("n", type=int, help="iterations", choices=range(1, 10), nargs="?", default=3)
 	hilbert_parser.set_defaults(func=frascii.hilbert_curve)
 
 	# Fibonacci sub-command
-	fibonacci_parser = subparsers.add_parser("fibonacci", description="Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number")
+	fibonacci_parser = subparsers.add_parser("fibonacci", description="Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number", formatter_class=fc)
 	fibonacci_parser.add_argument("n", type=int, help="iterations", choices=range(0, 14), nargs="?", default=3)
 	fibonacci_parser.set_defaults(func=frascii.fibonacci_string)
 
 	# Mandelbrot sub-command
-	mandelbrot_parser = subparsers.add_parser("mandelbrot", description="Wikipedia: https://en.wikipedia.org/wiki/Mandelbrot_set")
+	mandelbrot_parser = subparsers.add_parser("mandelbrot", description="Wikipedia: https://en.wikipedia.org/wiki/Mandelbrot_set", formatter_class=fc)
 	mandelbrot_parser.add_argument("-x", type=float, help="real part of the images center", nargs="?", default=-0.8)
 	mandelbrot_parser.add_argument("-y", type=float, help="imaginary part of the images center", nargs="?", default=0)
 	mandelbrot_parser.add_argument("-x_radius", type=int, help="pixels added on left and right of center", nargs="?", default=27)
@@ -31,7 +32,7 @@ def cmd_main():
 	mandelbrot_parser.set_defaults(func=frascii.mandelbrot_string)
 
 	# Mandelbrot sub-command
-	julia_parser = subparsers.add_parser("julia", description="Wikipedia: https://en.wikipedia.org/wiki/Julia_set")
+	julia_parser = subparsers.add_parser("julia", description="Wikipedia: https://en.wikipedia.org/wiki/Julia_set", formatter_class=fc)
 	julia_parser.add_argument("-f", type=str, help="complex function", nargs="?", default="z**2 - 0.4 + 0.6j")
 	julia_parser.add_argument("-x", type=float, help="real part of the images center", nargs="?", default=0)
 	julia_parser.add_argument("-y", type=float, help="imaginary part of the images center", nargs="?", default=0)
