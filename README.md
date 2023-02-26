@@ -27,7 +27,7 @@ more to come ...
 ![Julia set in terminal by frascii](readme_images/julia.png)
 
 
-## Smaller ASCII Mandelbrot
+## Smaller ASCII Mandelbrot set
 ```
                                                        
                                        ▓░              
@@ -66,3 +66,11 @@ more to come ...
 │ └───┘ └───┘ │
 
 ```
+# Tip for better visualizstion
+
+Make a new custom terminal profile and set its fontsize to 1. (Menu->Preferences->Profiles)
+Then you can switch between the default profile and the new one to have "more pixels"
+
+![Preferences](readme_images/profile.png)
+
+![Font](readme_images/fontsize.png)
