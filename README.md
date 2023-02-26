@@ -31,6 +31,9 @@ more to come ...
 
 ![Julia set in terminal by frascii](readme_images/julia.png)
 
+`frascii julia -f "z**2 - 0.8" -x_radius 500 -y_radius 150 -stepsize 0.0033 -max_iter 20`
+![Julia set in terminal by frascii](readme_images/julia2.png)
+
 
 ## Smaller ASCII Mandelbrot set
 ```
