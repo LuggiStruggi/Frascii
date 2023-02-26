@@ -9,6 +9,8 @@ Install using `pip install frascii`
 
 `frascii hilbert_curve <n>`: Displays the n-th iteration of a hilbert curve.
 
+`frascii peano_curve <n>`: Displays the n-th iteration of a peano curve.
+
 `frascii fibonacci <n>`: Displays the fibonacci numbers up to the n-th fibonacci number as squares.
 
 `frascii mandelbrot <x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the mandelbrot set.
