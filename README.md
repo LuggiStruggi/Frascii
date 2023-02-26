@@ -13,7 +13,7 @@ Install using `pip install frascii`
 
 `frascii mandelbrot <x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the mandelbrot set.
 
-`frascii julia <f(z), x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the julia set for f(z).
+`frascii julia <f, x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the julia set for f(z).
 
 
 more to come ...
