@@ -74,7 +74,7 @@ more to come ...
 # Tip for better visualizstion
 
 Make a new custom terminal profile and set its fontsize to 1. (Menu->Preferences->Profiles)
-Then you can switch between the default profile and the new one to have "more pixels"
+Then you can switch between the default profile and the new one to have "more pixels" on one page.
 
 <img src="readme_images/profile.png" width=25% height=25%>
 <img src="readme_images/fontsize.png" width=50% height=50%>
