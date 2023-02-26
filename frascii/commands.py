@@ -30,6 +30,17 @@ def cmd_main():
 	mandelbrot_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=20)
 	mandelbrot_parser.set_defaults(func=frascii.mandelbrot_string)
 
+	# Mandelbrot sub-command
+	julia_parser = subparsers.add_parser("julia", description="Wikipedia: https://en.wikipedia.org/wiki/Julia_set")
+	julia_parser.add_argument("-f", type=str, help="complex function", nargs="?", default="z**2 - 0.4 + 0.6j")
+	julia_parser.add_argument("-x", type=float, help="real part of the images center", nargs="?", default=0)
+	julia_parser.add_argument("-y", type=float, help="imaginary part of the images center", nargs="?", default=0)
+	julia_parser.add_argument("-x_radius", type=int, help="pixels added on left and right of center", nargs="?", default=45)
+	julia_parser.add_argument("-y_radius", type=int, help="pixels added on top and bottom of center", nargs="?", default=18)
+	julia_parser.add_argument("-stepsize", type=float, help="size of a pixel", nargs="?", default=0.033)
+	julia_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=40)
+	julia_parser.set_defaults(func=frascii.julia_string)
+
 	args = parser.parse_args()
 	if args.subcommand == None:
 		parser.print_help()
