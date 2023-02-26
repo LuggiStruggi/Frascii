@@ -69,6 +69,10 @@ more to come ...
 
 ## ASCII Hilbert Curve
 
+`frascii hilbert_curve -n 4`
+
+![Hilbert curve in terminal by frascii](readme_images/hilbert.png)
+
 `frascii hilbert_curve -n 3`
 
 ```
