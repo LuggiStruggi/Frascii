@@ -1,5 +1,5 @@
 # Frascii
-Visualizations of Fractals for the Ubuntu (or other) Terminal
+ASCII-visualizations of Fractals for the Ubuntu (or other) Terminal
 
 Install using `pip install frascii`
 
