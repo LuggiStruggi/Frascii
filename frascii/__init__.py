@@ -4,7 +4,7 @@ from frascii.fractals.sierpinski_carpet import sierpinski_carpet_string
 from frascii.fractals.hilbert_curve import hilbert_curve_string
 from frascii.fractals.fibonacci import fibonacci_string
 
-__version__ = '1.3'
+__version__ = '1.4'
 
 def mandelbrot(x, y, x_radius, y_radius, stepsize, max_iter):
 	return mandelbrot_string(x, y, x_radius, y_radius, stepsize, max_iter)
