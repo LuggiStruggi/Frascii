@@ -19,7 +19,7 @@ def cmd_main():
 	# Fibonacci sub-command
 	fibonacci_parser = subparsers.add_parser("fibonacci", description="Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number", formatter_class=fc)
 	fibonacci_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 14), nargs="?", default=3)
-	fibonacci_parser.set_defaults(func=frascii.fibonacci_string)
+	fibonacci_parser.set_defaults(func=frascii.fibonacci)
 
 	# Mandelbrot sub-command
 	mandelbrot_parser = subparsers.add_parser("mandelbrot", description="Wikipedia: https://en.wikipedia.org/wiki/Mandelbrot_set", formatter_class=fc)
@@ -29,7 +29,7 @@ def cmd_main():
 	mandelbrot_parser.add_argument("-y_radius", type=int, help="pixels added on top and bottom of center", nargs="?", default=12)
 	mandelbrot_parser.add_argument("-stepsize", type=float, help="size of a pixel", nargs="?", default=0.05)
 	mandelbrot_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=20)
-	mandelbrot_parser.set_defaults(func=frascii.mandelbrot_string)
+	mandelbrot_parser.set_defaults(func=frascii.mandelbrot)
 
 	# Mandelbrot sub-command
 	julia_parser = subparsers.add_parser("julia", description="Wikipedia: https://en.wikipedia.org/wiki/Julia_set", formatter_class=fc)
@@ -40,7 +40,7 @@ def cmd_main():
 	julia_parser.add_argument("-y_radius", type=int, help="pixels added on top and bottom of center", nargs="?", default=18)
 	julia_parser.add_argument("-stepsize", type=float, help="size of a pixel", nargs="?", default=0.033)
 	julia_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=40)
-	julia_parser.set_defaults(func=frascii.julia_string)
+	julia_parser.set_defaults(func=frascii.julia)
 
 	args = parser.parse_args()
 	if args.subcommand == None:
