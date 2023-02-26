@@ -16,6 +16,11 @@ def cmd_main():
 	hilbert_parser.add_argument("-n", type=int, help="iterations", choices=range(1, 10), nargs="?", default=3)
 	hilbert_parser.set_defaults(func=frascii.hilbert_curve)
 
+	# Peano curve sub-command
+	peano_parser = subparsers.add_parser("peano_curve", description="Wikipedia: https://en.wikipedia.org/wiki/Peano_curve", formatter_class=fc)
+	peano_parser.add_argument("-n", type=int, help="iterations", choices=range(1, 7), nargs="?", default=2)
+	peano_parser.set_defaults(func=frascii.peano_curve)
+
 	# Fibonacci sub-command
 	fibonacci_parser = subparsers.add_parser("fibonacci", description="Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number", formatter_class=fc)
 	fibonacci_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 14), nargs="?", default=3)
@@ -31,7 +36,7 @@ def cmd_main():
 	mandelbrot_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=20)
 	mandelbrot_parser.set_defaults(func=frascii.mandelbrot)
 
-	# Mandelbrot sub-command
+	# Julia sub-command
 	julia_parser = subparsers.add_parser("julia", description="Wikipedia: https://en.wikipedia.org/wiki/Julia_set", formatter_class=fc)
 	julia_parser.add_argument("-f", type=str, help="complex function", nargs="?", default="z**2 - 0.4 + 0.6j")
 	julia_parser.add_argument("-x", type=float, help="real part of the images center", nargs="?", default=0)
