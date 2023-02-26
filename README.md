@@ -1,5 +1,5 @@
 # Frascii
-Visualizations of Fractals for the Ubuntu (or other) Terminal
+ASCII-visualizations of Fractals for the Ubuntu (or other) Terminal
 
 Install using `pip install frascii`
 
@@ -20,8 +20,7 @@ more to come ...
 
 # Examples
 
-## Screenshots of Terminal (zoomed out)
-### Mandelbrot set
+## Mandelbrot set
 `frascii mandelbrot -x_radius 400 -y_radius 180 -stepsize 0.0033`
 
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
@@ -55,7 +54,7 @@ more to come ...
                                        ▓░              
 ```
 
-### Julia set
+## Julia set
 `frascii julia -f "z**2 - 0.4 + 0.6j" -x_radius 450 -y_radius 180 -stepsize 0.0033`
 
 ![Julia set in terminal by frascii](readme_images/julia.png)
@@ -66,7 +65,7 @@ more to come ...
 
 ## ASCII Hilbert Curve
 
-`frascii hilbert_curve 3`
+`frascii hilbert_curve -n 3`
 
 ```
 ┌─┐ ┌─┐ ┌─┐ ┌─┐
