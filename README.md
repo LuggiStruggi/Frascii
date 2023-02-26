@@ -66,7 +66,7 @@ more to come ...
 
 ## ASCII Hilbert Curve
 
-`frascii hilbert_curve 3`
+`frascii hilbert_curve -n 3`
 
 ```
 ┌─┐ ┌─┐ ┌─┐ ┌─┐
