@@ -22,8 +22,13 @@ more to come ...
 
 ## Screenshots of Terminal (zoomed out)
 ### Mandelbrot set
+`frascii mandelbrot -x_radius 400 -y_radius 180 -stepsize 0.0033`
+
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
+
 ### Julia set
+`frascii julia -f "z**2 - 0.4 + 0.6j" -x_radius 450 -y_radius 180 -stepsize 0.0033`
+
 ![Julia set in terminal by frascii](readme_images/julia.png)
 
 
@@ -68,8 +73,8 @@ more to come ...
 ```
 # Tip for better visualizstion
 
-Make a new custom terminal profile and set its fontsize to 1. (Menu->Preferences->Profiles)
-Then you can switch between the default profile and the new one to have "more pixels"
+Make a new custom terminal profile and set its fontsize to 1 (Menu->Preferences->Profiles).
+Then you can switch between the default profile and the new one to have "more pixels" on one page.
 
 <img src="readme_images/profile.png" width=25% height=25%>
 <img src="readme_images/fontsize.png" width=50% height=50%>
