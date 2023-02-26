@@ -7,7 +7,6 @@ setup(
 		author='Lukas König',
 		author_email='lukasmkoenig@gmx.net',
 		packages=find_packages(),
-		#package_data = {'frascii' : ['fractals']},
 		entry_points={'console_scripts': ['frascii=frascii.commands:cmd_main']},
 		decription="DESCRIPTION"
 	)
