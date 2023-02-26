@@ -8,17 +8,17 @@ def cmd_main():
 
 	# Sierpinski carpet sub-command
 	sierpinski_parser = subparsers.add_parser("sierpinski_carpet", description="Wikipedia: https://en.wikipedia.org/wiki/Sierpinski_carpet", formatter_class=fc)
-	sierpinski_parser.add_argument("n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
+	sierpinski_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
 	sierpinski_parser.set_defaults(func=frascii.sierpinski_carpet)
 
 	# Hilbert curve sub-command
 	hilbert_parser = subparsers.add_parser("hilbert_curve", description="Wikipedia: https://en.wikipedia.org/wiki/Hilbert_curve", formatter_class=fc)
-	hilbert_parser.add_argument("n", type=int, help="iterations", choices=range(1, 10), nargs="?", default=3)
+	hilbert_parser.add_argument("-n", type=int, help="iterations", choices=range(1, 10), nargs="?", default=3)
 	hilbert_parser.set_defaults(func=frascii.hilbert_curve)
 
 	# Fibonacci sub-command
 	fibonacci_parser = subparsers.add_parser("fibonacci", description="Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number", formatter_class=fc)
-	fibonacci_parser.add_argument("n", type=int, help="iterations", choices=range(0, 14), nargs="?", default=3)
+	fibonacci_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 14), nargs="?", default=3)
 	fibonacci_parser.set_defaults(func=frascii.fibonacci_string)
 
 	# Mandelbrot sub-command
