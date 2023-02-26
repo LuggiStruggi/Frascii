@@ -26,17 +26,8 @@ more to come ...
 
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
 
-### Julia set
-`frascii julia -f "z**2 - 0.4 + 0.6j" -x_radius 450 -y_radius 180 -stepsize 0.0033`
+`frascii mandelbrot`
 
-![Julia set in terminal by frascii](readme_images/julia.png)
-
-`frascii julia -f "z**2 - 0.8" -x_radius 500 -y_radius 150 -stepsize 0.0033 -max_iter 20`
-
-![Julia set in terminal by frascii](readme_images/julia2.png)
-
-
-## Smaller ASCII Mandelbrot set
 ```
                                                        
                                        ▓░              
@@ -63,7 +54,20 @@ more to come ...
                                       ░░▒░▒█           
                                        ▓░              
 ```
-## ASCII Hilbert Curve, n = 3
+
+### Julia set
+`frascii julia -f "z**2 - 0.4 + 0.6j" -x_radius 450 -y_radius 180 -stepsize 0.0033`
+
+![Julia set in terminal by frascii](readme_images/julia.png)
+
+`frascii julia -f "z**2 - 0.8" -x_radius 500 -y_radius 150 -stepsize 0.0033 -max_iter 20`
+
+![Julia set in terminal by frascii](readme_images/julia2.png)
+
+## ASCII Hilbert Curve
+
+`frascii hilbert_curve 3`
+
 ```
 ┌─┐ ┌─┐ ┌─┐ ┌─┐
 │ └─┘ │ │ └─┘ │
