@@ -27,7 +27,7 @@ more to come ...
 ![Julia set in terminal by frascii](readme_images/julia.png)
 
 
-## Smaller ASCII Mandelbrot
+## Smaller ASCII Mandelbrot set
 ```
                                                        
                                        ▓░              
