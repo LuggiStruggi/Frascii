@@ -71,7 +71,7 @@ more to come ...
 
 ![Julia set in terminal by frascii](readme_images/julia3.png)
 
-## ASCII Hilbert Curve
+## Hilbert Curve
 
 `frascii hilbert_curve -n 4`
 
