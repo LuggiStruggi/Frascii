@@ -63,6 +63,10 @@ more to come ...
 
 ![Julia set in terminal by frascii](readme_images/julia2.png)
 
+`frascii julia -f "2-z**2" -max_iter 5 -stepsize 0.008 -x 1 -x_radius 375 -y_radius 25`
+
+![Julia set in terminal by frascii](readme_images/julia3.png)
+
 ## ASCII Hilbert Curve
 
 `frascii hilbert_curve -n 3`
