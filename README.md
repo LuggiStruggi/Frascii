@@ -79,7 +79,7 @@ more to come ...
 │ └───┘ └───┘ │
 
 ```
-# Tip for better visualizstion
+# Tip for better visualization
 
 Make a new custom terminal profile and set its fontsize to 1 (Menu->Preferences->Profiles).
 Then you can switch between the default profile and the new one to have "more pixels" on one page.
