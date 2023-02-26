@@ -13,12 +13,19 @@ Install using `pip install frascii`
 
 `frascii mandelbrot <x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the mandelbrot set.
 
+`frascii julia <f, x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the julia set for f(z).
+
+
 more to come ...
 
 # Examples
 
-## Screenshot of Terminal (zoomed out)
+## Screenshots of Terminal (zoomed out)
+### Mandelbrot set
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
+### Julia set
+![Julia set in terminal by frascii](readme_images/julia.png)
+
 
 ## Smaller ASCII Mandelbrot
 ```
