@@ -7,6 +7,8 @@ Install using `pip install frascii`
 
 `frascii sierpinski_carpet <n>`: Displays the n-th iteration of a sierpinski carpet.
 
+`frascii sierpinski_triangle <n>`: Displays the n-th iteration of a sierpinski triangle.
+
 `frascii hilbert_curve <n>`: Displays the n-th iteration of a hilbert curve.
 
 `frascii peano_curve <n>`: Displays the n-th iteration of a peano curve.
