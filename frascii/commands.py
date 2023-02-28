@@ -11,6 +11,11 @@ def cmd_main():
 	sierpinski_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
 	sierpinski_parser.set_defaults(func=frascii.sierpinski_carpet)
 
+	# Sierpinski triangle sub-command
+	sierpinski_parser = subparsers.add_parser("sierpinski_triangle", description="Wikipedia: https://en.wikipedia.org/wiki/Sierpinski_triangle", formatter_class=fc)
+	sierpinski_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 10), nargs="?", default=3)
+	sierpinski_parser.set_defaults(func=frascii.sierpinski_triangle)
+
 	# Hilbert curve sub-command
 	hilbert_parser = subparsers.add_parser("hilbert_curve", description="Wikipedia: https://en.wikipedia.org/wiki/Hilbert_curve", formatter_class=fc)
 	hilbert_parser.add_argument("-n", type=int, help="iterations", choices=range(1, 10), nargs="?", default=3)
