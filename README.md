@@ -5,21 +5,21 @@ Install using `pip install frascii`
 
 # Commands
 
-`frascii sierpinski_carpet <n>`: Displays the n-th iteration of a sierpinski carpet.
+`frascii sierpinski_carpet <n>`: Displays the n-th iteration of the [Sierpinski Carpet](https://en.wikipedia.org/wiki/Sierpinski_carpet).
 
-`frascii sierpinski_triangle <n>`: Displays the n-th iteration of a sierpinski triangle.
+`frascii sierpinski_triangle <n>`: Displays the n-th iteration of the [Sierpinski Triangle](https://en.wikipedia.org/wiki/Sierpinski_triangle).
 
-`frascii hilbert_curve <n>`: Displays the n-th iteration of a hilbert curve.
+`frascii hilbert_curve <n>`: Displays the n-th iteration of the [Hilbert Curve](https://en.wikipedia.org/wiki/Hilbert_curve).
 
-`frascii peano_curve <n>`: Displays the n-th iteration of a peano curve.
+`frascii peano_curve <n>`: Displays the n-th iteration of the [Peano Curve](https://en.wikipedia.org/wiki/Peano_curve).
 
-`frascii dragon_curve <n>`: Displays the n-th iteration of a dragon curve.
+`frascii dragon_curve <n>`: Displays the n-th iteration of the [Dragon Curve](https://en.wikipedia.org/wiki/Dragon_curve).
 
-`frascii fibonacci <n>`: Displays the fibonacci numbers up to the n-th fibonacci number as squares.
+`frascii fibonacci <n>`: Displays the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence) up to the n as squares.
 
-`frascii mandelbrot <x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the mandelbrot set.
+`frascii mandelbrot <x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the [Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set).
 
-`frascii julia <f, x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the julia set for f(z).
+`frascii julia <f, x, y, x_radius, y_radius, stepsize, max_iter>`: Displays a specified part of the [Julia Set](https://en.wikipedia.org/wiki/Julia_set) for a given f(z).
 
 
 more to come ...
