@@ -21,6 +21,11 @@ def cmd_main():
 	peano_parser.add_argument("-n", type=int, help="iterations", choices=range(1, 7), nargs="?", default=2)
 	peano_parser.set_defaults(func=frascii.peano_curve)
 
+	# Dragon curve sub-command
+	dragon_parser = subparsers.add_parser("dragon_curve", description="Wikipedia: https://en.wikipedia.org/wiki/Dragon_curve", formatter_class=fc)
+	dragon_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 18), nargs="?", default=7)
+	dragon_parser.set_defaults(func=frascii.dragon_curve)
+
 	# Fibonacci sub-command
 	fibonacci_parser = subparsers.add_parser("fibonacci", description="Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number", formatter_class=fc)
 	fibonacci_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 14), nargs="?", default=3)
