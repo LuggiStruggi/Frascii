@@ -16,6 +16,11 @@ def cmd_main():
 	sierpinski_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 10), nargs="?", default=3)
 	sierpinski_parser.set_defaults(func=frascii.sierpinski_triangle)
 
+	# Koch snowflake sub-command
+	koch_parser = subparsers.add_parser("koch", description="Wikipedia: https://en.wikipedia.org/wiki/Koch_snowflake", formatter_class=fc)
+	koch_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
+	koch_parser.set_defaults(func=frascii.koch)
+
 	# Vicsek fractal sub-command
 	vicsek_parser = subparsers.add_parser("vicsek", description="Wikipedia: https://en.wikipedia.org/wiki/Vicsek_fractal", formatter_class=fc)
 	vicsek_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
