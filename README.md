@@ -9,6 +9,8 @@ Install using `pip install frascii`
 
 `frascii sierpinski_triangle <n>`: Displays the n-th iteration of the [Sierpinski Triangle](https://en.wikipedia.org/wiki/Sierpinski_triangle).
 
+`frascii cantor <n>`: Displays the n-th iteration of the [Cantor Set](https://en.wikipedia.org/wiki/Cantor_set).
+
 `frascii koch <n>`: Displays the n-th iteration of the [Koch Snowflake](https://en.wikipedia.org/wiki/Koch_snowflake).
 
 `frascii vicsek <n>`: Displays the n-th iteration of the [Vicsek Fractal](https://en.wikipedia.org/wiki/Vicsek_fractal).
