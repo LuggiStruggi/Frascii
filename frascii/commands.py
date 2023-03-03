@@ -16,6 +16,11 @@ def cmd_main():
 	sierpinski_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 10), nargs="?", default=3)
 	sierpinski_parser.set_defaults(func=frascii.sierpinski_triangle)
 
+	# Cantor set sub-command
+	cantor_parser = subparsers.add_parser("cantor", description="Wikipedia: https://en.wikipedia.org/wiki/Cantor_set", formatter_class=fc)
+	cantor_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
+	cantor_parser.set_defaults(func=frascii.cantor)
+
 	# Koch snowflake sub-command
 	koch_parser = subparsers.add_parser("koch", description="Wikipedia: https://en.wikipedia.org/wiki/Koch_snowflake", formatter_class=fc)
 	koch_parser.add_argument("-n", type=int, help="iterations", choices=range(0, 7), nargs="?", default=2)
