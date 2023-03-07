@@ -152,7 +152,7 @@ more to come ...
   ╶─┘ └─┘     └─┘ └─╴   
 ```
 
-`frascii l_system -start "F+F+F+F" -rules "(F->F+F-F-FF+F+F-F)" -n 2 -direction U` leads to a Koch Island.
+`frascii l_system -start "F+F+F+F" -rules "(F->F+F-F-FF+F+F-F)" -n 2 -direction U` leads to a **Koch Island**.
 
 ```
                       ┌─┐                                 
@@ -185,9 +185,9 @@ more to come ...
 ```
 
 
-`frascii l_system -start "A" -rules "(A->+BF-AFA-FB+),(B->-AF+BFB+FA-)" -n 4 -direction R` leads to a Hilbert Curve.
+`frascii l_system -start "A" -rules "(A->+BF-AFA-FB+),(B->-AF+BFB+FA-)" -n 4 -direction R` leads to a **Hilbert Curve**.
 
-`frascii l_system -start "FX" -rules "(X->X+YF+),(Y->-FX-Y)" -n 10 -direction U` leads to a Dragon Curve
+`frascii l_system -start "FX" -rules "(X->X+YF+),(Y->-FX-Y)" -n 10 -direction U` leads to a **Dragon Curve**.
 
 
 
