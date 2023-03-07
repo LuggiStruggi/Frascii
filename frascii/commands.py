@@ -72,6 +72,15 @@ def cmd_main():
 	julia_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=40)
 	julia_parser.set_defaults(func=frascii.julia)
 
+	# L-system sub-command
+	l_system_parser = subparsers.add_parser("l_system", description="Wikipedia: https://en.wikipedia.org/wiki/L-system", formatter_class=fc)
+	l_system_parser.add_argument("-start", type=str, help="real part of the images center", nargs="?", default="F")
+	l_system_parser.add_argument("-rules", type=str, help="imaginary part of the images center", nargs="?", default="(F->F+F-F-F+F)")
+	l_system_parser.add_argument("-n", type=int, help="pixels added on left and right of center", nargs="?", default=3)
+	l_system_parser.add_argument("-direction", type=str, help="pixels added on top and bottom of center", choices=["U", "R", "D", "L"], nargs="?", default="U")
+	l_system_parser.set_defaults(func=frascii.l_system)
+
+
 	args = parser.parse_args()
 	if args.subcommand == None:
 		parser.print_help()
