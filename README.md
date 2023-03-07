@@ -142,7 +142,7 @@ more to come ...
 
 ## L-systems
 
-# Rules
+### Rules
 
 **F** will draw a forward line.
 
