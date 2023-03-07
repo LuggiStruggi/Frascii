@@ -142,6 +142,16 @@ more to come ...
 
 ## L-systems
 
+# Rules
+
+**F** will draw a forward line.
+
+**+** will turn right.
+
+**-** will turn left.
+
+Any other character can be used in the rules but will be ignored when drawing.
+
 `frascii l_system -start "F" -rules "(F->F+F-F-F+F)" -n 2 -direction R`
 
 ```
