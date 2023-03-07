@@ -154,6 +154,8 @@ more to come ...
 
 `frascii l_system -start "A" -rules "(A->+BF-AFA-FB+),(B->-AF+BFB+FA-)" -n 4 -direction R` leads to a Hilbert curve.
 
+`frascii l_system -start "FX" -rules "(X->X+YF+),(Y->-FX-Y)" -n 10 -direction U` leads to a Dragon curve
+
 
 
 
