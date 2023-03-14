@@ -199,7 +199,7 @@ Any other character can be used in the rules but will be ignored when drawing.
 
 `frascii l_system -start "FX" -rules "(X->X+YF+),(Y->-FX-Y)" -n 10 -direction U` leads to a **Dragon Curve**.
 
-
+`frascii l_system -start Y -rules "(Y->YZ-Z-Z-ZA--),(X->XZ),(Z->XF),(A->Z)" -n 6` leads to **Fibonacci Squares**.
 
 
 # Tip for better visualization
