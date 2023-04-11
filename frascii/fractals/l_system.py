@@ -4,7 +4,7 @@ def l_system(start, rules, n):
 	rules = dict(rule.split("->") for rule in rules)
 	for i in range(n):
 		letters = "".join(rules[l] if l in rules else l for l in letters)
-	return "".join(l for l in letters if l in "+-F")
+	return "".join(l for l in letters if l in "+-Ff")
 	
 
 def cleanup(arr):
@@ -51,8 +51,9 @@ def l_system_string(start, rules, n, start_dir="U"):
 		elif turn == "+":
 			comp = comp[-1] + comp[:-1]
 
-		elif turn == "F":
-			out[pos[0]][pos[1]] = curr.replace(comp[0], "")
+		elif turn in "fF":
+			if turn == "F":
+				out[pos[0]][pos[1]] = curr.replace(comp[0], "")
 			prev_comp = comp	
 			if comp[0] == "U":
 				pos[0] -= 1
@@ -62,7 +63,8 @@ def l_system_string(start, rules, n, start_dir="U"):
 				pos[0] += 1
 			elif comp[0] == "L":
 				pos[1] -= 1
-			out[pos[0]][pos[1]] = out[pos[0]][pos[1]].replace(comp[2], "")
+			if turn == "F":
+				out[pos[0]][pos[1]] = out[pos[0]][pos[1]].replace(comp[2], "")
 
 	# Enlarge grid
 	if pos[0] == len(out) - 1:
@@ -84,4 +86,4 @@ def l_system_string(start, rules, n, start_dir="U"):
 
 
 if __name__ == '__main__':
-	print(l_system_string("A", "(A->+BF-AFA-FB+), (B->-AF+BFB+FA-)", 3, "R"))
+	print(l_system_string("A", "(A->+Bf-AFA-FB+), (B->-AF+BFB+FA-)", 3, "R"))
