@@ -154,7 +154,7 @@ more to come ...
 
 **\[** will put current position and orientation on a stack.
 
-**\]** will rset current position and orientation based on topmost entry on stack.
+**\]** will set current position and orientation based on topmost entry on stack.
 
 Any other character can be used in the rules but will be ignored when drawing.
 
