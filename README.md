@@ -152,9 +152,9 @@ more to come ...
 
 **-** will turn left.
 
-**\[** will put current position and orientation on a stack.
+**\[** will put current position and orientation on the stack.
 
-**\]** will set current position and orientation based on topmost entry on stack.
+**\]** will set current position and orientation based on topmost entry on stack which is then removed.
 
 Any other character can be used in the rules but will be ignored when drawing.
 
