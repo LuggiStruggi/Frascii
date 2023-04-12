@@ -144,11 +144,17 @@ more to come ...
 
 ### Rules
 
-**F** will draw a forward line.
+**F** will step forward and draw a line.
+
+**f** will step forward and not draw a line.
 
 **+** will turn right.
 
 **-** will turn left.
+
+**\[** will put current position and orientation on a stack.
+
+**\]** will rset current position and orientation based on topmost entry on stack.
 
 Any other character can be used in the rules but will be ignored when drawing.
 
