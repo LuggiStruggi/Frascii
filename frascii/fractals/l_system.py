@@ -4,7 +4,7 @@ def l_system(start, rules, n):
 	rules = dict(rule.split("->") for rule in rules)
 	for i in range(n):
 		letters = "".join(rules[l] if l in rules else l for l in letters)
-	return "".join(l for l in letters if l in "+-Ff")
+	return "".join(l for l in letters if l in "+-Ff[]")
 	
 
 def cleanup(arr):
@@ -22,6 +22,7 @@ def l_system_string(start, rules, n, start_dir="U"):
 	letters = l_system(start, rules, n)
 	out = [["URDL"]]
 	pos = [0, 0]  #y, x
+	pos_stack = []
 	comp = "URDL"
 	if start_dir not in "URDL":
 		raise ValueError(f"start_dir must be U,R,D or L but was {start_dir}")
@@ -40,9 +41,11 @@ def l_system_string(start, rules, n, start_dir="U"):
 		if pos[0] == 0:
 			out.insert(0, ["URDL" for i in range(len(out[0]))])
 			pos[0] = 1
+			pos_stack = [[[p[0][0]+1, p[0][1]], p[1]] for p in pos_stack]
 		if pos[1] == 0:
 			out = [["URDL"] + row for row in out]
-			pos[1] = 1	
+			pos[1] = 1
+			pos_stack = [[[p[0][0], p[0][1]+1], p[1]] for p in pos_stack]
 
 		curr = out[pos[0]][pos[1]]
 		if turn == "-":
@@ -66,6 +69,13 @@ def l_system_string(start, rules, n, start_dir="U"):
 			if turn == "F":
 				out[pos[0]][pos[1]] = out[pos[0]][pos[1]].replace(comp[2], "")
 
+		elif turn == "[":
+			pos_stack.append([[pos[0], pos[1]], comp])
+
+		elif turn == "]":
+			pos, comp = pos_stack.pop()
+
+
 	# Enlarge grid
 	if pos[0] == len(out) - 1:
 		out.append(["URDL" for i in range(len(out[0]))])
@@ -74,9 +84,11 @@ def l_system_string(start, rules, n, start_dir="U"):
 	if pos[0] == 0:
 		out.insert(0, ["URDL" for i in range(len(out[0]))])
 		pos[0] = 1
+		pos_stack = [[[p[0][0]+1, p[0][1]], p[1]] for p in pos_stack]
 	if pos[1] == 0:
 		out = [["URDL"] + row for row in out]
 		pos[1] = 1	
+		pos_stack = [[[p[0][0], p[0][1]+1], p[1]] for p in pos_stack]
 
 	trans = {"URDL": "  ", "URD": "╴ ", "URL": "╷ ", "UDL": "╶─",
 			 "RDL": "╵ ", "RL": "│ ", "UD": "──", "UR": "┐ ",
@@ -86,4 +98,4 @@ def l_system_string(start, rules, n, start_dir="U"):
 
 
 if __name__ == '__main__':
-	print(l_system_string("A", "(A->+Bf-AFA-FB+), (B->-AF+BFB+FA-)", 3, "R"))
+	print(l_system_string("F", "(F->F[-F][+F])", 5, "U"))
