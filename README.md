@@ -35,9 +35,13 @@ more to come ...
 # Examples
 
 ## Mandelbrot set
-`frascii mandelbrot -x_radius 400 -y_radius 180 -stepsize 0.0033`
+`frascii mandelbrot -x_radius 400 -y_radius 180 -stepsize 0.0033 -style non-repeating`
 
 ![Mandelbrot set in terminal by frascii](readme_images/mandelbrot.png)
+
+`frascii mandelbrot -x_radius 400 -y_radius 180 -stepsize 0.0033 -style repeating`
+
+![Mandelbrot set in terminal by frascii](readme_images/repeating.png)
 
 `frascii mandelbrot -x -1.15 -y 0.26 -x_radius 200 -y_radius 70 -stepsize 3.7e-4 -max_iter 60`
 
