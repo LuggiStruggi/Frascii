@@ -55,10 +55,14 @@ def cmd_main():
 	mandelbrot_parser = subparsers.add_parser("mandelbrot", description="Wikipedia: https://en.wikipedia.org/wiki/Mandelbrot_set", formatter_class=fc)
 	mandelbrot_parser.add_argument("-x", type=float, help="real part of the images center", nargs="?", default=-0.8)
 	mandelbrot_parser.add_argument("-y", type=float, help="imaginary part of the images center", nargs="?", default=0)
-	mandelbrot_parser.add_argument("-x_radius", type=int, help="pixels added on left and right of center", nargs="?", default=27)
-	mandelbrot_parser.add_argument("-y_radius", type=int, help="pixels added on top and bottom of center", nargs="?", default=12)
+	mandelbrot_parser.add_argument("-x_radius", type=int, help="pixels added on left and right of center", nargs="?", default=25)
+	mandelbrot_parser.add_argument("-y_radius", type=int, help="pixels added on top and bottom of center", nargs="?", default=14)
 	mandelbrot_parser.add_argument("-stepsize", type=float, help="size of a pixel", nargs="?", default=0.05)
 	mandelbrot_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=20)
+	mandelbrot_parser.add_argument("-style", type=str, help="style of the visualization",
+								   choices=["repeating", "non-repeating"], nargs="?", default="non-repeating")
+	mandelbrot_parser.add_argument("-grid", type=str, help="square (double-chars) or rectangle (single-char) grid.",
+								   choices=["square", "rect"], nargs="?", default="rect")
 	mandelbrot_parser.set_defaults(func=frascii.mandelbrot)
 
 	# Julia sub-command
@@ -70,6 +74,11 @@ def cmd_main():
 	julia_parser.add_argument("-y_radius", type=int, help="pixels added on top and bottom of center", nargs="?", default=18)
 	julia_parser.add_argument("-stepsize", type=float, help="size of a pixel", nargs="?", default=0.033)
 	julia_parser.add_argument("-max_iter", type=int, help="iterations after which z is assumed to be in the set", nargs="?", default=40)
+	julia_parser.add_argument("-style", type=str, help="style of the visualization",
+								   choices=["repeating", "non-repeating"], nargs="?", default="non-repeating")
+	julia_parser.add_argument("-grid", type=str, help="square (double-chars) or rectangle (single-char) grid.",
+								   choices=["square", "rect"], nargs="?", default="rect")
+
 	julia_parser.set_defaults(func=frascii.julia)
 
 	# L-system sub-command

@@ -11,13 +11,13 @@ from frascii.fractals.dragon_curve import dragon_curve_string
 from frascii.fractals.fibonacci import fibonacci_string
 from frascii.fractals.l_system import l_system_string
 
-__version__ = '2.2'
+__version__ = '2.5'
 
-def mandelbrot(x, y, x_radius, y_radius, stepsize, max_iter):
-	return mandelbrot_string(x, y, x_radius, y_radius, stepsize, max_iter)
+def mandelbrot(x, y, x_radius, y_radius, stepsize, max_iter, style, grid):
+	return mandelbrot_string(x, y, x_radius, y_radius, stepsize, max_iter, style, grid)
 
-def julia(f, x, y, x_radius, y_radius, stepsize, max_iter):
-	return julia_string(f, x, y, x_radius, y_radius, stepsize, max_iter)
+def julia(f, x, y, x_radius, y_radius, stepsize, max_iter, style, grid):
+	return julia_string(f, x, y, x_radius, y_radius, stepsize, max_iter, style, grid)
 
 def sierpinski_carpet(n):
 	return sierpinski_carpet_string(n)
