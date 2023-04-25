@@ -63,6 +63,11 @@ def cmd_main():
 								   choices=["repeating", "non-repeating"], nargs="?", default="non-repeating")
 	mandelbrot_parser.add_argument("-grid", type=str, help="square (double-chars) or rectangle (single-char) grid.",
 								   choices=["square", "rect"], nargs="?", default="rect")
+	mandelbrot_parser.add_argument("-explore", help=("explore the mandelbrot set using mouse and keyboard. Use mouse or arrow keys to navigate."
+																 " Use page-up and page-down to zoom in and out."
+																 " Use ',' and '.' to change the amount of iteratios. Use '-' to change style."
+																 " Exit with ESC or 'x'."),
+								   action="store_true")
 	mandelbrot_parser.set_defaults(func=frascii.mandelbrot)
 
 	# Julia sub-command
@@ -78,7 +83,11 @@ def cmd_main():
 								   choices=["repeating", "non-repeating"], nargs="?", default="non-repeating")
 	julia_parser.add_argument("-grid", type=str, help="square (double-chars) or rectangle (single-char) grid.",
 								   choices=["square", "rect"], nargs="?", default="rect")
-
+	julia_parser.add_argument("-explore", help=("explore the julia set using mouse and keyboard. Use mouse or arrow keys to navigate."
+																 " Use page-up and page-down to zoom in and out."
+																 " Use ',' and '.' to change the amount of iteratios. Use '-' to change style."
+																 " Exit with ESC or 'x'."),
+							  action="store_true")
 	julia_parser.set_defaults(func=frascii.julia)
 
 	# L-system sub-command

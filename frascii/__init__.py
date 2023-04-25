@@ -1,5 +1,5 @@
-from frascii.fractals.mandelbrot import mandelbrot_string
-from frascii.fractals.julia import julia_string
+from frascii.fractals.mandelbrot import mandelbrot_string, mandelbrot_explore
+from frascii.fractals.julia import julia_string, julia_explore
 from frascii.fractals.sierpinski_carpet import sierpinski_carpet_string
 from frascii.fractals.sierpinski_triangle import sierpinski_triangle_string
 from frascii.fractals.cantor import cantor_string
@@ -11,12 +11,16 @@ from frascii.fractals.dragon_curve import dragon_curve_string
 from frascii.fractals.fibonacci import fibonacci_string
 from frascii.fractals.l_system import l_system_string
 
-__version__ = '2.5'
+__version__ = '2.6'
 
-def mandelbrot(x, y, x_radius, y_radius, stepsize, max_iter, style, grid):
+def mandelbrot(x, y, x_radius, y_radius, stepsize, max_iter, style, grid, explore):
+	if explore:
+		x, y, x_radius, y_radius, stepsize, max_iter, style, grid = mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style, grid)
 	return mandelbrot_string(x, y, x_radius, y_radius, stepsize, max_iter, style, grid)
 
-def julia(f, x, y, x_radius, y_radius, stepsize, max_iter, style, grid):
+def julia(f, x, y, x_radius, y_radius, stepsize, max_iter, style, grid, explore):
+	if explore:
+		x, y, x_radius, y_radius, stepsize, max_iter, style, grid = julia_explore(f, x, y, x_radius, y_radius, stepsize, max_iter, style, grid)
 	return julia_string(f, x, y, x_radius, y_radius, stepsize, max_iter, style, grid)
 
 def sierpinski_carpet(n):
