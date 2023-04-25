@@ -43,7 +43,7 @@ more to come ...
 
 ![Mandelbrot set in terminal by frascii](readme_images/repeating.png)
 
-frascii mandelbrot -explore -x_radius 300 -y_radius 300
+`frascii mandelbrot -x_radius 300 -y_radius 300 -explore`
 
 ![Mandelbrot set in terminal by frascii](readme_images/explore.gif)
 
