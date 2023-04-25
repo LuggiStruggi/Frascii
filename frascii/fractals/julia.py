@@ -96,6 +96,15 @@ def julia_explore(f, x, y, x_radius, y_radius, stepsize, max_iter, style="repeat
 				y += (-my + y_rad)*s
 			elif key == 27 or key == ord('x'):
 				break
+			elif key == ord('h'):
+				stdscr.clear()
+				stdscr.addstr(0, 0, ("CONTROLS:\n\nARROWS       : navigate complex plane\nPAGE-UP/DOWN : zoom in/out\n',' and '.'  :")+
+									(" change max-iterations\n'-'          : change style\nESC and 'x'  : leave explore mode and print to screen.\n\n")+
+									(f"CURRENT COMMAND:\nfrascii julia -x {x} -y {y} -x_radius {x_rad} -y_radius {y_rad} -stepsize {s}")+
+									(f" -max_iter {i} -style {styles[si]} -grid {grid}"))
+				curses.flushinp()
+				while stdscr.getch() not in (ord('h'), ord('x'), 27):
+					pass
 
 		return x, y, x_rad, y_rad, s, i, styles[si], grid
 
