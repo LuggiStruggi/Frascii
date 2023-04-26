@@ -1,3 +1,5 @@
+import importlib.util
+
 def in_julia(f, z_0, max_iter):
 	z = z_0
 	for i in range(max_iter):
@@ -38,7 +40,9 @@ def julia_string(f, x, y, x_radius, y_radius, stepsize, max_iter, style, grid):
 
 
 def julia_explore(f, x, y, x_radius, y_radius, stepsize, max_iter, style="repeating", grid="rect"):
-	
+		
+	if importlib.util.find_spec('curses') is None:
+		raise Exception("To use the explore command the curses package must be installed.")
 	import curses
 	from curses import wrapper
 	stdscr = curses.initscr()

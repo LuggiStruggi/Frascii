@@ -1,3 +1,5 @@
+import importlib.util
+
 def in_mandelbrot(c, max_iter):
 	z = 0
 	for i in range(max_iter):
@@ -33,7 +35,9 @@ def mandelbrot_string(x, y, x_radius, y_radius, stepsize, max_iter, style="repea
 			return '\n'.join(''.join(shades[int(4*d/max_iter)]*2 for d in l) for l in mset)
 
 def mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style="repeating", grid="rect"):
-	
+
+	if importlib.util.find_spec('curses') is None:
+		raise Exception("To use the explore command the curses package must be installed.")
 	import curses
 	from curses import wrapper
 	stdscr = curses.initscr()
