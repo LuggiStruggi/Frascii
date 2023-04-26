@@ -90,8 +90,8 @@ def mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style="repe
 				si = 1 - si
 			elif key == curses.KEY_MOUSE:
 				_, mx, my, _, _ = curses.getmouse()
-				x += ((mx if grid == "rect" else mx//2) - x_rad)*s
-				y += (-my + y_rad)*s
+				x += ((mx if grid == "rect" else mx/2) - x_rad)*s
+				y += (-my + y_rad)*(2*s if grid == "rect" else s)
 			elif key == 27 or key == ord('x'):
 				break
 			elif key == ord('h'):
