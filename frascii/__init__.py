@@ -9,9 +9,9 @@ from frascii.fractals.hilbert_curve import hilbert_curve_string
 from frascii.fractals.peano_curve import peano_curve_string
 from frascii.fractals.dragon_curve import dragon_curve_string
 from frascii.fractals.fibonacci import fibonacci_string
-from frascii.fractals.l_system import l_system_string
+from frascii.fractals.l_system import l_system_string, l_system_animate
 
-__version__ = '3.2'
+__version__ = '3.3'
 
 def mandelbrot(x, y, x_radius, y_radius, stepsize, max_iter, style, grid, explore):
 	if explore:
@@ -50,5 +50,7 @@ def dragon_curve(n):
 def fibonacci(n):
 	return fibonacci_string(n)
 
-def l_system(start, rules, n, direction):
-	return l_system_string(start, rules, n, direction)
+def l_system(start, rules, n, direction, animate):
+	if animate is None:
+		return l_system_string(start, rules, n, direction)
+	return l_system_animate(start, rules, n, direction, animate)

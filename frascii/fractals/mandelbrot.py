@@ -61,12 +61,11 @@ def mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style="repe
 		si = 0 if style == "non-repeating" else 1
  	
 		while True:
-			stdscr.clear()
 			rows, cols = stdscr.getmaxyx()
 			y_rad = min(y_radius, rows//2-1)
 			x_rad = min(x_radius, cols//(2 if grid == "rect" else 4)-1)
 			stdscr.addstr(0, 0, mandelbrot_string(x, y, x_rad, y_rad, s, i, styles[si], grid))
-			stdscr.refresh()
+			#stdscr.refresh()
 			key = stdscr.getch()
 			curses.flushinp()
 			if key == curses.KEY_RIGHT:
@@ -95,7 +94,6 @@ def mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style="repe
 			elif key == 27 or key == ord('x'):
 				break
 			elif key == ord('h'):
-				stdscr.clear()
 				stdscr.addstr(0, 0, ("CONTROLS:\n\nARROWS       : navigate complex plane\nPAGE-UP/DOWN : zoom in/out\n',' and '.'  :")+
 									(" change max-iterations\n'-'          : change style\nESC and 'x'  : leave explore mode and print to screen.\n\n")+
 									(f"CURRENT COMMAND:\nfrascii mandelbrot -x {x} -y {y} -x_radius {x_rad} -y_radius {y_rad} -stepsize {s}")+

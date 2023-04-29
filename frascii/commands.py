@@ -96,6 +96,7 @@ def cmd_main():
 	l_system_parser.add_argument("-rules", type=str, help="imaginary part of the images center", nargs="?", default="(F->F+F-F-F+F)")
 	l_system_parser.add_argument("-n", type=int, help="pixels added on left and right of center", nargs="?", default=3)
 	l_system_parser.add_argument("-direction", type=str, help="pixels added on top and bottom of center", choices=["U", "R", "D", "L"], nargs="?", default="U")
+	l_system_parser.add_argument("-animate", type=float, help="if set scene is animated with chosen delay between frames.", nargs="?", default=None)
 	l_system_parser.set_defaults(func=frascii.l_system)
 
 
