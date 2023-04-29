@@ -11,7 +11,7 @@ from frascii.fractals.dragon_curve import dragon_curve_string
 from frascii.fractals.fibonacci import fibonacci_string
 from frascii.fractals.l_system import l_system_string, l_system_animate
 
-__version__ = '3.3'
+__version__ = '3.4'
 
 def mandelbrot(x, y, x_radius, y_radius, stepsize, max_iter, style, grid, explore):
 	if explore:
@@ -51,6 +51,8 @@ def fibonacci(n):
 	return fibonacci_string(n)
 
 def l_system(start, rules, n, direction, animate):
-	if animate is None:
+	if animate is -1:
 		return l_system_string(start, rules, n, direction)
+	elif animate is None:
+		return l_system_animate(start, rules, n, direction, 0.01)
 	return l_system_animate(start, rules, n, direction, animate)
