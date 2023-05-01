@@ -92,11 +92,11 @@ def cmd_main():
 
 	# L-system sub-command
 	l_system_parser = subparsers.add_parser("l_system", description="Wikipedia: https://en.wikipedia.org/wiki/L-system", formatter_class=fc)
-	l_system_parser.add_argument("-start", type=str, help="real part of the images center", nargs="?", default="F")
-	l_system_parser.add_argument("-rules", type=str, help="imaginary part of the images center", nargs="?", default="(F->F+F-F-F+F)")
-	l_system_parser.add_argument("-n", type=int, help="pixels added on left and right of center", nargs="?", default=3)
-	l_system_parser.add_argument("-direction", type=str, help="pixels added on top and bottom of center", choices=["U", "R", "D", "L"], nargs="?", default="U")
-	l_system_parser.add_argument("-animate", type=float, help="if set scene is animated with chosen delay between frames.", nargs="?", default=-1)
+	l_system_parser.add_argument("-start", type=str, help="Axiom/Starting state of the L-system", nargs="?", default="F")
+	l_system_parser.add_argument("-rules", type=str, help="The rules of the system. Should look like '(*->***),(*->***)'", nargs="?", default="(F->F+F-F-F+F)")
+	l_system_parser.add_argument("-n", type=int, help="Amount of iterations", nargs="?", default=3)
+	l_system_parser.add_argument("-direction", type=str, help="Initial direction: up, right left or down.", choices=["U", "R", "D", "L"], nargs="?", default="U")
+	l_system_parser.add_argument("-animate", type=float, help="to animate the drawing process. Time delay between frames can be given.", nargs="?", default=-1)
 	l_system_parser.set_defaults(func=frascii.l_system)
 
 
