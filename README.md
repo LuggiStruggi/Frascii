@@ -45,7 +45,7 @@ more to come ...
 
 `frascii mandelbrot -x_radius 300 -y_radius 300 -explore`
 
-![Mandelbrot set in terminal by frascii](readme_images/explore.gif)
+![Mandelbrot set in terminal by frascii](readme_images/zoom.gif)
 
 `frascii mandelbrot -x -1.15 -y 0.26 -x_radius 200 -y_radius 70 -stepsize 3.7e-4 -max_iter 60`
 
@@ -210,6 +210,10 @@ Any other character can be used in the rules but will be ignored when drawing.
 
 
 `frascii l_system -start "A" -rules "(A->+BF-AFA-FB+),(B->-AF+BFB+FA-)" -n 4 -direction R` leads to a **Hilbert Curve**.
+
+`frascii l_system -start "A" -rules "(A->+BF-AFA-FB+),(B->-AF+BFB+FA-)" -n 4 -direction R -animate`
+
+![Hilbert curve in terminal by frascii](readme_images/hilbert_animated.gif)
 
 `frascii l_system -start "FX" -rules "(X->X+YF+),(Y->-FX-Y)" -n 10 -direction U` leads to a **Dragon Curve**.
 
