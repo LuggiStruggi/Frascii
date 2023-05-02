@@ -219,6 +219,8 @@ Any other character can be used in the rules but will be ignored when drawing.
 
 `frascii l_system -start Y -rules "(Y->YZ-Z-Z-ZA--),(X->XZ),(Z->XF),(A->Z)" -n 6` leads to **Fibonacci Squares**.
 
+[This L-System manual](http://paulbourke.net/fractals/lsys/) by Paul Bourke shows much more L-system definitions for cool patterns.
+
 
 # Tip for better visualization
 
