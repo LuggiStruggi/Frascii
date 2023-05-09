@@ -28,7 +28,7 @@ def mandelbrot_string(x, y, x_radius, y_radius, stepsize, max_iter, style="repea
 		if style == "repeating":
 			shades = ['░', '▒', '▓', '▒']
 			m = len(shades)
-			return '\n'.join(''.join("  " if d == 0 else shades[d%m]*2 if d < max_iter else "██" for d in l) for l in mset)
+			return '\n'.join(''.join("	" if d == 0 else shades[d%m]*2 if d < max_iter else "██" for d in l) for l in mset)
 
 		elif style == "non-repeating":
 			shades = [' ', '░', '▒', '▓', '█']
@@ -43,6 +43,7 @@ def mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style="repe
 	stdscr = curses.initscr()
 	curses.mousemask(1)
 	curses.noecho()
+	stdscr.scrollok(False)
 	curses.cbreak()
 	stdscr.keypad(True)
 	s = stepsize
@@ -59,7 +60,7 @@ def mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style="repe
 		nonlocal i
 		styles = ["non-repeating", "repeating"]
 		si = 0 if style == "non-repeating" else 1
- 	
+	
 		while True:
 			rows, cols = stdscr.getmaxyx()
 			y_rad = min(y_radius, rows//2-1)
@@ -88,14 +89,19 @@ def mandelbrot_explore(x, y, x_radius, y_radius, stepsize, max_iter, style="repe
 			elif key == ord('-'):
 				si = 1 - si
 			elif key == curses.KEY_MOUSE:
-				_, mx, my, _, _ = curses.getmouse()
-				x += ((mx if grid == "rect" else mx/2) - x_rad)*s
-				y += (-my + y_rad)*(2*s if grid == "rect" else s)
+				#_, mx, my, _, _ = curses.getmouse()
+				try:
+					_, mx, my, _, _ = curses.getmouse()
+					x += ((mx if grid == "rect" else mx/2) - x_rad)*s
+					y += (-my + y_rad)*(2*s if grid == "rect" else s)
+				except curses.error:
+					pass
+
 			elif key == 27 or key == ord('x'):
 				break
 			elif key == ord('h'):
-				stdscr.addstr(0, 0, ("CONTROLS:\n\nARROWS       : navigate complex plane\nPAGE-UP/DOWN : zoom in/out\n',' and '.'  :")+
-									(" change max-iterations\n'-'          : change style\nESC and 'x'  : leave explore mode and print to screen.\n\n")+
+				stdscr.addstr(0, 0, ("CONTROLS:\n\nARROWS		: navigate complex plane\nPAGE-UP/DOWN : zoom in/out\n',' and '.'  :")+
+									(" change max-iterations\n'-'		   : change style\nESC and 'x'	: leave explore mode and print to screen.\n\n")+
 									(f"CURRENT COMMAND:\nfrascii mandelbrot -x {x} -y {y} -x_radius {x_rad} -y_radius {y_rad} -stepsize {s}")+
 									(f" -max_iter {i} -style {styles[si]} -grid {grid}"))
 				curses.flushinp()
