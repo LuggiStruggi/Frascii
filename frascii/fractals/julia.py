@@ -67,12 +67,12 @@ def julia_explore(f, x, y, x_radius, y_radius, stepsize, max_iter, style="repeat
 		si = 0 if style == "non-repeating" else 1
  	
 		while True:
-			stdscr.clear()
+			#stdscr.clear()
 			rows, cols = stdscr.getmaxyx()
 			y_rad = min(y_radius, rows//2-1)
 			x_rad = min(x_radius, cols//(2 if grid == "rect" else 4)-1)
 			stdscr.addstr(0, 0, julia_string(f, x, y, x_rad, y_rad, s, i, styles[si], grid))
-			stdscr.refresh()
+			#stdscr.refresh()
 			key = stdscr.getch()
 			curses.flushinp()
 			if key == curses.KEY_RIGHT:
@@ -95,9 +95,12 @@ def julia_explore(f, x, y, x_radius, y_radius, stepsize, max_iter, style="repeat
 			elif key == ord('-'):
 				si = 1 - si
 			elif key == curses.KEY_MOUSE:
-				_, mx, my, _, _ = curses.getmouse()
-				x += ((mx if grid == "rect" else mx//2) - x_rad)*s
-				y += (-my + y_rad)*(2*s if grid == "rect" else s)
+				try:
+					_, mx, my, _, _ = curses.getmouse()
+					x += ((mx if grid == "rect" else mx/2) - x_rad)*s
+					y += (-my + y_rad)*(2*s if grid == "rect" else s)
+				except curses.error:
+					pass
 			elif key == 27 or key == ord('x'):
 				break
 			elif key == ord('h'):
